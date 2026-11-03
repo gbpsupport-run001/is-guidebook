@@ -329,3 +329,46 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   .shots img{box-shadow:none !important;}
   .footer{border-top:1px solid #cfd6e4;margin-top:12px;padding:8px 0 0 !important;}
 }
+
+/* ===================================================== */
+/* ===== ナビが増えたので：スマホは横スクロール式に ===== */
+/* ===================================================== */
+@media screen and (max-width:760px){
+  .topbar{
+    display:flex !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    gap:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    scroll-snap-type:x proximity;
+  }
+  .topbar::-webkit-scrollbar{display:none;}
+  /* 1項目の幅を決めて、右側が少し見切れる（まだ続きがあると分かる）ように */
+  .topbar a{flex:0 0 70px !important;scroll-snap-align:start;}
+  /* ホームは左に固定して、スクロールしても常に押せるように */
+  .topbar a.home,.topbar a.home.active{
+    position:sticky;
+    left:0;
+    z-index:3;
+    box-shadow:6px 0 8px -4px rgba(0,0,0,.45);
+  }
+  .topbar a.home{background:#1b2a4a !important;}
+  .topbar a.home.active{background:#2f5da6 !important;}
+}
+
+/* ===== PC：ナビが9項目になったので、少し詰めて1行に収める ===== */
+@media screen and (min-width:761px){
+  .topbar{gap:2px;padding:6px;}
+  .topbar a{padding:8px 9px;font-size:13.5px;}
+  .topbar .ic{margin-right:4px;}
+  .topbar .sep{margin:4px 3px;}
+}
+
+/* 幅がせまめのPC（ナビが960px未満になる幅）では、短い名前に切り替える */
+@media screen and (min-width:761px) and (max-width:1023px){
+  .topbar .l{display:none;}
+  .topbar .s{display:inline;}
+}
