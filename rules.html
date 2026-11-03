@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ISガイドブック｜IS事業部 全般ルール</title>
+<style>
+  :root{
+    --navy:#1b2a4a;
+    --blue:#2f5da6;
+    --green:#4a8a5c;
+    --warn:#c0621f;
+    --gold:#a07a1c;
+    --purple:#7a5cae;
+    --teal:#1c7c8a;
+    --line:#d8dee8;
+    --bg:#f5f7fb;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);margin:0;padding:32px;line-height:1.75;}
+  .sheet{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .header{background:var(--navy);color:#fff;padding:20px 32px;}
+  .header .eyebrow{font-size:12px;letter-spacing:.08em;opacity:.8;margin-bottom:4px;}
+  .header h1{margin:0;font-size:21px;}
+  .header .sub{font-size:12px;opacity:.75;margin-top:6px;}
+  .body{padding:28px 32px 36px;}
+
+  .policy-note{
+    background:#f3f8f4;border:1px solid #cfe3d4;border-left:4px solid #4a8a5c;
+    border-radius:4px;padding:10px 14px;margin-bottom:24px;
+    font-size:12.5px;line-height:1.8;color:#2f4a38;
+  }
+  .policy-note b{color:#2f6b45;}
+
+  .block{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:26px;background:#fff;}
+  .block-head{
+    display:flex;align-items:center;gap:10px;color:#fff;
+    font-weight:800;font-size:16px;padding:11px 16px;
+  }
+  .block-head .no{
+    width:26px;height:26px;border-radius:50%;background:#fff;
+    font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 26px;
+  }
+  .b1 .block-head{background:var(--blue);}   .b1 .no{color:var(--blue);}
+  .b2 .block-head{background:var(--purple);} .b2 .no{color:var(--purple);}
+  .block-body{padding:16px 18px 18px;}
+
+  .tag{
+    display:inline-block;font-size:11.5px;font-weight:800;color:#fff;
+    padding:2px 9px;border-radius:999px;white-space:nowrap;
+  }
+  .tag.say{background:var(--warn);}
+
+  /* ---- 担当（管理・チェック） ---- */
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:2px 0 16px;}
+  .rl{
+    border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#f7f9fd;
+    display:flex;align-items:center;gap:12px;
+  }
+  .rl .rk{
+    flex:0 0 auto;font-size:12px;font-weight:800;color:#fff;
+    padding:3px 10px;border-radius:6px;
+  }
+  .rl.mg .rk{background:var(--navy);}
+  .rl.ck .rk{background:var(--green);}
+  .rl .rv{font-size:15.5px;font-weight:800;color:var(--navy);}
+  .rl .rv small{display:block;font-size:12px;font-weight:700;color:#6b7690;}
+
+  .lead{font-size:14.5px;font-weight:800;color:var(--navy);margin:0 0 8px;}
+  .p{font-size:15px;font-weight:700;margin:0 0 10px;}
+
+  /* ---- 例文（コピーできる） ---- */
+  .tplbox{
+    border:1px solid #e7c79c;
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .tplbar{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:#fdf1e1;
+    padding:8px 12px;
+  }
+  .tplbar .tt{font-size:13px;font-weight:800;color:#8a4a1a;}
+  .copy-btn{
+    -webkit-appearance:none;appearance:none;
+    background:#fff;color:#8a4a1a;
+    border:2px solid #c0621f;border-radius:8px;
+    font-family:inherit;font-weight:800;font-size:13.5px;
+    padding:5px 14px;cursor:pointer;
+  }
+  .copy-btn:hover{background:#c0621f;color:#fff;}
+  .copy-btn.done{background:#2f8a4d;border-color:#2f8a4d;color:#fff;}
+  pre.tpl{
+    margin:0;
+    padding:14px 16px;
+    white-space:pre-wrap;
+    word-break:break-word;
+    font-family:inherit;
+    font-size:14.5px;
+    font-weight:700;
+    line-height:1.9;
+    color:#222;
+  }
+  .hint{
+    font-size:12.5px;font-weight:700;color:#6b7690;margin-top:8px;
+  }
+
+  /* ---- IT振りの3分類 ---- */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 4px;}
+  .it{
+    border:1px solid #d9cdf0;
+    border-top:6px solid var(--purple);
+    border-radius:8px;
+    background:#faf7fe;
+    padding:14px 12px;
+    text-align:center;
+    font-size:18px;font-weight:800;color:#4b3484;
+  }
+  .it small{display:block;font-size:11.5px;font-weight:800;color:#8a7aaa;margin-bottom:2px;}
+
+  .footer{
+    border-top:1px solid var(--line);padding:14px 32px;font-size:11px;color:#888;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+  }
+
+  @media print{
+    .copy-btn{display:none !important;}
+    .hint{display:none;}
+  }
+  @media screen and (max-width:760px){
+    body{padding:12px;}
+    .body{padding:20px 14px 26px;}
+    .header{padding:18px 16px;}
+    .block-body{padding:14px 14px 16px;}
+    .roles{grid-template-columns:1fr;}
+    .three{grid-template-columns:1fr;}
+    .it{font-size:17px;padding:12px;}
+  }
+</style>
+<link rel="stylesheet" href="common.css">
+<script src="common.js" defer></script>
+</head>
+<body>
+<nav class="topbar">
+  <a href="./" class="home"><span class="ic">🏠</span><span class="l">ISガイドブック</span><span class="s">ホーム</span></a>
+  <span class="sep"></span>
+  <a href="appo-followup.html"><span class="ic">📞</span><span class="l">アポ取得後</span><span class="s">アポ後</span></a>
+  <a href="it-is-handover.html"><span class="ic">🔀</span><span class="l">IT→IS引継ぎ</span><span class="s">IT→IS</span></a>
+  <a href="handover.html"><span class="ic">🤝</span><span class="l">商談の引継ぎ</span><span class="s">商談</span></a>
+  <a href="contract-script.html"><span class="ic">🗣️</span><span class="l">ゲット後</span><span class="s">ゲット後</span></a>
+  <a href="docusign-flow.html"><span class="ic">✍️</span><span class="l">電子契約</span><span class="s">電子契約</span></a>
+  <a href="workflow.html"><span class="ic">📋</span><span class="l">受注後</span><span class="s">受注後</span></a>
+</nav>
+<div class="sheet">
+  <div class="header">
+    <div class="eyebrow">RUNBIRD IS事業部　ルール</div>
+    <h1>IS事業部 全般ルール</h1>
+    <div class="sub">チーム共通の決まりごと（目安）</div>
+  </div>
+
+  <div class="body">
+    <div class="policy-note">
+      <b>このページの位置づけ</b><br>
+      ガチガチの規律ではなく、「条例」レベルの目安です。大前提として、報告漏れなどは一人で抱えず、みんなで管理します。
+    </div>
+
+    <!-- 1 Works朝共有 -->
+    <div class="block b1">
+      <div class="block-head"><span class="no">1</span>行動・受注共有：Worksに朝送る内容</div>
+      <div class="block-body">
+        <div class="roles">
+          <div class="rl mg"><span class="rk">管理</span><span class="rv">仲村さん<small>基本は仲村さんが管理</small></span></div>
+          <div class="rl ck"><span class="rk">チェック</span><span class="rv">佐久間<small>送る内容を確認</small></span></div>
+        </div>
+
+        <div class="lead"><span class="tag say">例文</span>　対応予定（結果待ち含む）を、営業ごとにまとめて再共有</div>
+
+        <div class="tplbox">
+          <div class="tplbar">
+            <span class="tt">✉️ Worksに送る例文</span>
+            <button type="button" class="copy-btn" data-target="tpl-works">コピー</button>
+          </div>
+<pre class="tpl" id="tpl-works">対応予定（結果待ち含む）再共有です！
+各営業マン確認と対応をお願いいたします！
+
+【佐久間】
+○○商店 →11/4(水)17時、再営 前日前確認
+○○整体→11/6(金) 16時、IT商談済み、前日13時以降前確伝え済み
+○○フィット→追い12月14日の週
+
+【アヤ】</pre>
+        </div>
+        <div class="hint">※ 店名の○○は、実際の店名に置きかえて使ってください</div>
+      </div>
+    </div>
+
+    <!-- 2 IT振り -->
+    <div class="block b2">
+      <div class="block-head"><span class="no">2</span>IT振りの場合の振り分け</div>
+      <div class="block-body">
+        <p class="p">IT振りの場合は、次の<b>3つ</b>で振り分けます。</p>
+        <div class="three">
+          <div class="it"><small>①</small>ITAB</div>
+          <div class="it"><small>②</small>IT商談済み</div>
+          <div class="it"><small>③</small>ITアポ振り</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>株式会社ランバード　IS事業部</span>
+    <span>IS事業部 全般ルール</span>
+  </div>
+</div>
+
+<script>
+/* 例文の「コピー」ボタン */
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.copy-btn');
+  if (!b) return;
+  var el = document.getElementById(b.getAttribute('data-target'));
+  if (!el) return;
+  var text = el.innerText;
+  function done() {
+    var o = b.textContent;
+    b.textContent = '✓ コピーしました';
+    b.classList.add('done');
+    setTimeout(function () { b.textContent = o; b.classList.remove('done'); }, 1800);
+  }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) {}
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+});
+</script>
+</body>
+</html>
