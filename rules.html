@@ -43,6 +43,7 @@
   }
   .b1 .block-head{background:var(--blue);}   .b1 .no{color:var(--blue);}
   .b2 .block-head{background:var(--purple);} .b2 .no{color:var(--purple);}
+  .b3 .block-head{background:var(--teal);}   .b3 .no{color:var(--teal);}
   .block-body{padding:16px 18px 18px;}
 
   .tag{
@@ -118,6 +119,28 @@
     font-size:18px;font-weight:800;color:#4b3484;
   }
   .it small{display:block;font-size:11.5px;font-weight:800;color:#8a7aaa;margin-bottom:2px;}
+
+  /* ---- 同席案件：やることリスト ---- */
+  .todo{list-style:none;margin:0 0 6px;padding:0;counter-reset:td;}
+  .todo > li{
+    counter-increment:td;position:relative;
+    border:1px solid var(--line);border-radius:8px;background:#f7fbfc;
+    padding:11px 14px 11px 46px;margin-bottom:10px;
+    font-size:15px;font-weight:700;color:var(--navy);
+  }
+  .todo > li::before{
+    content:counter(td);position:absolute;left:13px;top:11px;
+    width:23px;height:23px;border-radius:50%;background:var(--teal);color:#fff;
+    font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  }
+  .todo .sub{display:block;font-size:12.5px;font-weight:700;color:#6b7690;margin-top:2px;}
+  .order{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px;}
+  .order .who{
+    background:#fff;border:1px solid #b9dbe1;border-radius:999px;
+    padding:2px 12px;font-size:13.5px;font-weight:800;color:#14606b;
+  }
+  .order .ar{color:#6b7690;font-weight:800;}
+  .tplbox{margin-bottom:10px;}
 
   .footer{
     border-top:1px solid var(--line);padding:14px 32px;font-size:11px;color:#888;
@@ -206,6 +229,39 @@
           <div class="it"><small>①</small>ITAB</div>
           <div class="it"><small>②</small>IT商談済み</div>
           <div class="it"><small>③</small>ITアポ振り</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 同席案件 -->
+    <div class="block b3">
+      <div class="block-head"><span class="no">3</span>同席案件のルール</div>
+      <div class="block-body">
+        <ol class="todo">
+          <li>監督者のLINEグループ「たまご」を更新</li>
+          <li>IT・ISのホワイトボードを更新
+            <span class="order"><span class="who">アヤ</span><span class="ar">→</span><span class="who">佐久間</span><span class="ar">→</span><span class="who">ITメンバー</span><span class="sub" style="margin:0 0 0 4px;">の順</span></span>
+          </li>
+          <li>行動予定共有で、アポ紙を送るときにも「監督者同席案件です」と送る</li>
+          <li>監督者が出たタイミングで、IT事業部行動予定に「監督者さんIS商談Zoom出ました」を送る</li>
+        </ol>
+
+        <div class="lead"><span class="tag say">例文</span>　行動予定共有・IT事業部行動予定に送る一言</div>
+
+        <div class="tplbox">
+          <div class="tplbar">
+            <span class="tt">✉️ アポ紙を送るとき（行動予定共有）</span>
+            <button type="button" class="copy-btn" data-target="tpl-doseki">コピー</button>
+          </div>
+<pre class="tpl" id="tpl-doseki">監督者同席案件です</pre>
+        </div>
+
+        <div class="tplbox">
+          <div class="tplbar">
+            <span class="tt">✉️ 監督者が出たとき（IT事業部行動予定）</span>
+            <button type="button" class="copy-btn" data-target="tpl-deta">コピー</button>
+          </div>
+<pre class="tpl" id="tpl-deta">監督者さんIS商談Zoom出ました</pre>
         </div>
       </div>
     </div>
