@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ISガイドブック</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
   :root{
     --navy:#1b2a4a;
@@ -52,6 +53,16 @@
     font-size:15px;font-weight:700;color:var(--navy);
     margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--navy);
   }
+
+  .group{margin:0 0 30px;}
+  .group:last-child{margin-bottom:0;}
+  .gtitle{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 12px;}
+  .gtitle .gno{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    font-size:14px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;
+  }
+  .gtitle .gname{font-size:17px;font-weight:800;color:var(--navy);}
+  .gtitle .gsub{font-size:12.5px;font-weight:700;color:#6b7690;}
 
   .cards{
     display:grid;
@@ -128,13 +139,15 @@
   <a href="./" class="home active"><span class="ic">🏠</span><span class="l">ホーム</span><span class="s">ホーム</span></a>
   <span class="sep"></span>
   <a href="rules.html"><span class="ic">📜</span><span class="l">全般ルール</span><span class="s">ルール</span></a>
+  <a href="report-guide.html"><span class="ic">📝</span><span class="l">資料の作成</span><span class="s">資料作成</span></a>
+  <span class="sep"></span>
   <a href="appo-followup.html"><span class="ic">📞</span><span class="l">アポ取得後</span><span class="s">アポ後</span></a>
   <a href="it-is-handover.html"><span class="ic">🔀</span><span class="l">IT→IS引継ぎ</span><span class="s">IT→IS</span></a>
   <a href="handover.html"><span class="ic">🤝</span><span class="l">商談の引継ぎ</span><span class="s">商談</span></a>
+  <span class="sep"></span>
   <a href="contract-script.html"><span class="ic">🗣️</span><span class="l">ゲット後</span><span class="s">ゲット後</span></a>
   <a href="docusign-flow.html"><span class="ic">✍️</span><span class="l">電子契約</span><span class="s">電子契約</span></a>
   <a href="workflow.html"><span class="ic">📋</span><span class="l">受注後</span><span class="s">受注後</span></a>
-  <a href="report-guide.html"><span class="ic">📝</span><span class="l">資料の作成</span><span class="s">資料作成</span></a>
 </nav>
 <div class="sheet">
   <div class="header">
@@ -147,21 +160,40 @@
 
     <p class="lvl1">■ ページ一覧</p>
 
-    <div class="cards">
+    <div class="groups">
+
+      <section class="group">
+        <div class="gtitle"><span class="gno">1</span><span class="gname">ルール・事務</span><span class="gsub">毎日の決まりごとと、事務の作業</span></div>
+        <div class="cards">
 
       <a class="card c-rules" href="rules.html">
         <div class="icon">📜</div>
         <div class="name">IS事業部 全般ルール</div>
-        <div class="desc">Worksへの朝の共有、IT振りの振り分けなど、チーム共通の決まりごと</div>
-        <div class="tags"><span class="tag">Works共有</span><span class="tag">IT振り</span></div>
+        <div class="desc">Worksへの朝の共有、IT振りの振り分け、同席案件など、チーム共通の決まりごと</div>
+        <div class="tags"><span class="tag">Works共有</span><span class="tag">IT振り</span><span class="tag">同席案件</span></div>
         <div class="go">ひらく →</div>
       </a>
+
+      <a class="card c-git" href="report-guide.html">
+        <div class="icon">📝</div>
+        <div class="name">資料の作成手順</div>
+        <div class="desc">データをそろえて、資料をつくり、GitHubで公開・管理するまで</div>
+        <div class="tags"><span class="tag">LINE WORKS</span><span class="tag">AXT</span><span class="tag">GitHub</span></div>
+        <div class="go">ひらく →</div>
+      </a>
+
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="gtitle"><span class="gno">2</span><span class="gname">アポ〜商談</span><span class="gsub">アポを取ってから、商談まで</span></div>
+        <div class="cards">
 
       <a class="card c-appo" href="appo-followup.html">
         <div class="icon">📞</div>
         <div class="name">アポ取得後の対応一覧</div>
         <div class="desc">アポ種別ごとの、連絡・詰めのタイミングと担当</div>
-        <div class="tags"><span class="tag">アポ種別</span><span class="tag">詰め</span><span class="tag">伝え方</span></div>
+        <div class="tags"><span class="tag">アポ種別</span><span class="tag">詰め</span><span class="tag">伝え方</span><span class="tag">アポ紙</span></div>
         <div class="go">ひらく →</div>
       </a>
 
@@ -181,13 +213,12 @@
         <div class="go">ひらく →</div>
       </a>
 
-      <a class="card c-flow" href="workflow.html">
-        <div class="icon">📋</div>
-        <div class="name">案件受注後のワークフロー</div>
-        <div class="desc">MEOクラウド／BUZZ＋の流れと、営業・営業事務・業務の担当</div>
-        <div class="tags"><span class="tag">MEOクラウド</span><span class="tag">BUZZ＋</span><span class="tag">チェックリスト</span></div>
-        <div class="go">ひらく →</div>
-      </a>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="gtitle"><span class="gno">3</span><span class="gname">ゲット後〜受注後</span><span class="gsub">契約を取ってから、受注後の流れまで</span></div>
+        <div class="cards">
 
       <a class="card c-script" href="contract-script.html">
         <div class="icon">🗣️</div>
@@ -205,13 +236,16 @@
         <div class="go">ひらく →</div>
       </a>
 
-      <a class="card c-git" href="report-guide.html">
-        <div class="icon">📝</div>
-        <div class="name">資料の作成手順</div>
-        <div class="desc">データをそろえて、資料をつくり、GitHubで公開・管理するまで</div>
-        <div class="tags"><span class="tag">LINE WORKS</span><span class="tag">AXT</span><span class="tag">GitHub</span></div>
+      <a class="card c-flow" href="workflow.html">
+        <div class="icon">📋</div>
+        <div class="name">案件受注後のワークフロー</div>
+        <div class="desc">MEOクラウド／BUZZ＋の流れと、営業・営業事務・業務の担当</div>
+        <div class="tags"><span class="tag">MEOクラウド</span><span class="tag">BUZZ＋</span><span class="tag">チェックリスト</span></div>
         <div class="go">ひらく →</div>
       </a>
+
+        </div>
+      </section>
 
     </div>
   </div>
