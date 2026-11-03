@@ -79,6 +79,17 @@
     }
   }
 
+  // ナビ：いま開いているページの項目が見える位置までスクロール（スマホの横スクロール用）
+  function scrollNav() {
+    var bar = document.querySelector(".topbar");
+    var act = bar && bar.querySelector("a.active");
+    if (bar && act && bar.scrollWidth > bar.clientWidth) {
+      bar.scrollLeft = act.offsetLeft - (bar.clientWidth - act.offsetWidth) / 2;
+    }
+  }
+  if (document.readyState !== "loading") scrollNav();
+  else document.addEventListener("DOMContentLoaded", scrollNav);
+
   if (document.readyState !== "loading") init();
   else document.addEventListener("DOMContentLoaded", init);
 })();
