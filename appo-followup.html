@@ -302,6 +302,31 @@
   .apo-warn .apo-box-t{color:var(--red);}
   .apo-why ul{margin:0;padding-left:20px;font-size:15px;font-weight:700;}
   .apo-warn .t{font-size:15px;font-weight:700;}
+
+  /* ---- アポ紙：大きな案内（アポインター側と営業サイド） ---- */
+  .apo-big{
+    border:2px solid var(--navy);border-radius:10px;background:#f1f5fc;
+    padding:18px 20px 14px;margin-bottom:16px;text-align:center;
+  }
+  .apo-big-main{font-size:25px;font-weight:800;color:var(--navy);line-height:1.9;}
+  .apo-big-main .chip{display:inline-block;font-size:inherit;font-weight:800;color:#fff;border:0;border-radius:10px;padding:0 14px;margin:0 6px;line-height:1.6;}
+  .apo-big-main .chip.ap{background:var(--blue);}
+  .apo-big-main .chip.sa{background:var(--green);}
+  .apo-big-share{
+    margin-top:10px;padding-top:12px;border-top:1px dashed #b3c0dc;
+    font-size:16px;font-weight:700;color:var(--navy);
+  }
+  .apo-big-share b{color:var(--blue);white-space:nowrap;}
+  .apo-big-main .nw{white-space:nowrap;}
+  .apo-big-rep{margin-top:8px;font-size:14px;font-weight:800;color:var(--warn);}
+  .apo-tip-t{font-size:13.5px;font-weight:800;color:#2f6b45;margin:4px 0 8px;}
+  .apo-add-item .plus.tip{background:var(--green);font-size:12px;}
+  @media (max-width:640px){
+    .apo-big{padding:14px 12px 12px;}
+    .apo-big-main{font-size:19px;}
+    .apo-big-main .chip{padding:0 10px;margin:2px 3px;}
+    .apo-big-share{font-size:14.5px;}
+  }
 </style>
 <link rel="stylesheet" href="common.css">
 <script src="common.js" defer></script>
@@ -327,7 +352,7 @@
   <div class="header">
     <div class="eyebrow">RUNBIRD IS事業部　アポ種別フロー</div>
     <h1>アポ取得後の対応一覧</h1>
-    <div class="sub">アポ種別ごとの連絡・詰めのタイミング　｜　2026年11月3日 更新</div>
+    <div class="sub">アポ種別ごとの連絡・詰めのタイミング　｜　2026年11月4日 更新</div>
   </div>
 
   <div class="body">
@@ -336,7 +361,44 @@
       ガチガチの規律ではなく、「条例」レベルの目安です。大前提として、報告漏れなどは一人で抱えず、みんなで管理します。
     </div>
 
-    <p class="lvl1 first">■ アポ種別ごとの対応</p>
+    <p class="lvl1 first">■ アポ紙に書く情報を追加する</p>
+
+    <div class="apo-big">
+      <div class="apo-big-main"><span class="chip ap">アポインター側</span>と<span class="chip sa">営業サイド</span><span class="nw">で調べる</span></div>
+      <div class="apo-big-share">営業側で情報が足りなかった場合は、<b>アポインターに共有する</b></div>
+      <div class="apo-big-rep">ここは、反復で覚えていくしかない！</div>
+    </div>
+
+    <div class="lead-text">調べたときに分かったことは、アポ紙に書き足す</div>
+
+    <div class="apo-add">
+      <div class="apo-add-item"><span class="plus">＋</span><div>電話番号を追加する</div></div>
+      <div class="apo-add-item"><span class="plus">＋</span><div>違う屋号名で出てくることもある<span class="apo-sub">出てきたら、その屋号名も書き足す</span></div></div>
+    </div>
+
+    <div class="apo-case"><span class="case-label">例</span>架電したときに、電話番号の屋号名が違っていたとき　→　アポ紙に書き足して、詰め者に共有する</div>
+
+    <div class="apo-tip-t">調べ方</div>
+    <div class="apo-add">
+      <div class="apo-add-item"><span class="plus tip">調</span><div>代表者名が出てきたら、代表者名で調べる</div></div>
+      <div class="apo-add-item"><span class="plus tip">調</span><div>店名＋住所で検索すると、さらに情報が出てくる可能性がある</div></div>
+    </div>
+    <p class="small-note">※ 調べ方は、今後どんどん追加していきます。</p>
+
+    <div class="apo-why">
+      <div class="apo-box-t">書き足す理由</div>
+      <ul>
+        <li>詰めや商談で使える<b>武器</b>が増える</li>
+        <li><b>リサーチ力</b>が身につく ＝ あなた自身の武器になる</li>
+      </ul>
+    </div>
+
+    <div class="apo-warn">
+      <div class="apo-box-t">注意</div>
+      <div class="t">書き足した情報を<b>詰め者に共有しなかった</b>場合、不信になる可能性もある</div>
+    </div>
+
+    <p class="lvl1">■ アポ種別ごとの対応</p>
 
     <div class="table-wrap">
       <table class="appo">
@@ -518,32 +580,6 @@
       「この後、資料担当の部署から連絡が入るので、ご対応お願いします！そのお電話に出ていただかないと、またスケジュール調整しないといけなくなっちゃうので、出てくださいね」
     </div>
 
-    <p class="lvl1">■ アポ紙に書く情報を追加する</p>
-
-    <div class="lead-text">調べたときに分かったことは、アポ紙に書き足す</div>
-
-    <div class="apo-add">
-      <div class="apo-add-item"><span class="plus">＋</span><div>電話番号を追加する</div></div>
-      <div class="apo-add-item"><span class="plus">＋</span><div>違う屋号名で出てくることもある<span class="apo-sub">出てきたら、その屋号名も書き足す</span></div></div>
-    </div>
-
-    <div class="apo-case"><span class="case-label">例</span>架電したときに、電話番号の屋号名が違っていたとき　→　アポ紙に書き足して、詰め者に共有する</div>
-
-    <div class="apo-why">
-      <div class="apo-box-t">書き足す理由</div>
-      <ul>
-        <li>詰めや商談で使える<b>武器</b>が増える</li>
-        <li><b>リサーチ力</b>が身につく ＝ あなた自身の武器になる</li>
-      </ul>
-    </div>
-
-    <div class="apo-warn">
-      <div class="apo-box-t">注意</div>
-      <div class="t">書き足した情報を<b>詰め者に共有しなかった</b>場合、不信になる可能性もある</div>
-    </div>
-
-    <p class="small-note">※ アポ紙に書き足す情報のリサーチ方法は、今後どんどん追加していきます。</p>
-
     <p class="lvl1">■ 詰めの担当（優先順）</p>
 
     <div class="chain-row">
@@ -565,7 +601,7 @@
 
   <div class="footer">
     <span>株式会社ランバード　IS事業部</span>
-    <span>2026年11月3日 更新</span>
+    <span>2026年11月4日 更新</span>
   </div>
 </div>
 </body>
