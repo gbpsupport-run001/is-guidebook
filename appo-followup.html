@@ -327,6 +327,45 @@
     .apo-big-main .chip{padding:0 10px;margin:2px 3px;}
     .apo-big-share{font-size:14.5px;}
   }
+
+  /* ---- メール送信例（ポップアップ） ---- */
+  .mail-open-row{margin:0 0 14px;}
+  .mail-open{
+    display:inline-flex;align-items:center;gap:6px;font-family:inherit;
+    border:2px solid var(--blue);background:#fff;color:var(--blue);
+    font-size:14.5px;font-weight:800;border-radius:8px;padding:8px 16px;cursor:pointer;
+  }
+  .mail-open:hover{background:var(--blue);color:#fff;}
+  dialog.mail-dlg{
+    border:0;border-radius:12px;padding:0;width:min(700px,94vw);max-height:88vh;
+    box-shadow:0 12px 40px rgba(20,30,60,.35);overflow:hidden;font-family:inherit;color:#1f2a44;
+  }
+  dialog.mail-dlg[open]{display:flex;flex-direction:column;}
+  dialog.mail-dlg::backdrop{background:rgba(20,30,50,.55);}
+  .mail-dlg-head{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:12px 14px 12px 18px;}
+  .mail-dlg-head .tt{flex:1;font-size:15px;font-weight:800;line-height:1.4;}
+  .mail-dlg-x{
+    flex:0 0 auto;width:34px;height:34px;border:0;border-radius:8px;background:rgba(255,255,255,.16);
+    color:#fff;font-size:20px;line-height:1;cursor:pointer;font-family:inherit;
+  }
+  .mail-dlg-x:hover{background:rgba(255,255,255,.3);}
+  .mail-dlg-body{padding:14px 18px 6px;overflow:auto;-webkit-overflow-scrolling:touch;}
+  .mail-note{
+    font-size:12.5px;font-weight:700;color:#8a4b12;background:#fdf3e3;border:1px solid #f0d9b3;
+    border-radius:6px;padding:7px 12px;margin:0 0 10px;
+  }
+  pre.mail-text{
+    white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:14px;font-weight:600;
+    line-height:1.85;margin:0 0 10px;background:#f7f9fd;border:1px solid var(--line);border-radius:8px;padding:14px 16px;
+  }
+  .mail-dlg-foot{display:flex;justify-content:flex-end;gap:10px;padding:10px 18px 14px;border-top:1px solid var(--line);background:#fff;}
+  .mail-btn{
+    font-family:inherit;font-size:14px;font-weight:800;border-radius:8px;padding:8px 18px;cursor:pointer;
+    border:2px solid var(--blue);background:#fff;color:var(--blue);
+  }
+  .mail-btn.main{background:var(--blue);color:#fff;}
+  .mail-btn.done{background:#4a8a5c;border-color:#4a8a5c;color:#fff;}
+  @media print{.mail-open-row,dialog.mail-dlg{display:none !important;}}
 </style>
 <link rel="stylesheet" href="common.css">
 <script src="common.js" defer></script>
@@ -352,7 +391,7 @@
   <div class="header">
     <div class="eyebrow">RUNBIRD IS事業部　アポ種別フロー</div>
     <h1>アポ取得後の対応一覧</h1>
-    <div class="sub">アポ種別ごとの連絡・詰めのタイミング　｜　2026年11月4日 更新</div>
+    <div class="sub">アポ種別ごとの連絡・詰めのタイミング　｜　2026年11月5日 更新</div>
   </div>
 
   <div class="body">
@@ -399,6 +438,10 @@
     </div>
 
     <p class="lvl1">■ アポ種別ごとの対応</p>
+
+    <div class="mail-open-row">
+      <button type="button" class="mail-open" id="mailOpen">✉️ アポ取得後のメール送信例を見る</button>
+    </div>
 
     <div class="table-wrap">
       <table class="appo">
@@ -601,8 +644,99 @@
 
   <div class="footer">
     <span>株式会社ランバード　IS事業部</span>
-    <span>2026年11月4日 更新</span>
+    <span>2026年11月5日 更新</span>
   </div>
 </div>
+
+<dialog class="mail-dlg" id="mailDlg" aria-labelledby="mailDlgT">
+  <div class="mail-dlg-head">
+    <div class="tt" id="mailDlgT">アポ取得後のメール送信例（Zoom案内）</div>
+    <button type="button" class="mail-dlg-x" data-close aria-label="閉じる">×</button>
+  </div>
+  <div class="mail-dlg-body">
+    <div class="mail-note">（　）の部分は、自分の情報や、そのときの内容に置きかえて使います。ZoomのURL・ID・パスコードは、その都度のものを入れてください。</div>
+<pre class="mail-text" id="mailText">（店名）
+（お客様名） 様
+お世話になっております。
+GBPサポートの（担当者名）です。
+
+先ほどはお忙しい中ご対応いただきありがとうございました。
+
+本日○月○日(○)○時からの打ち合わせで使用するオンラインミーティングのURLをお送りさせていただきます。
+
+お時間になりましたら下記URLよりZOOMへのご参加をお願いいたします。
+ 
+Zoom ミーティングに参加する
+（ZoomのURL）
+
+ミーティング ID: （ミーティングID）
+パスコード: （パスコード）
+
+また、Zoomアプリのインストールがお済でない方は以下のリンクからインストールをお願いいたします。
+
+【iPhoneをご利用の場合】
+ https://apps.apple.com/jp/app/zoom-workplace/id546505307
+
+【Androidをご利用の場合】
+ https://play.google.com/store/apps/details?id=us.zoom.videomeetings
+
+【パソコンでアプリインストール済みの場合】
+「このサイトはZoomを開こうとしています」のような確認画面が表示され、許可するとZoomアプリが起動して会議に参加します。 
+
+【パソコンでアプリ無しのご利用の場合】
+「ブラウザから参加」または「Join from your browser」をクリックして入室します。
+
+以上になります。
+よろしくお願いいたします。
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+株式会社ランバード
+（氏名）
+直通TEL：（直通の電話番号）
+
+〒104-6040
+東京都中央区晴海1丁目8−10
+晴海アイランド トリトンスクエア オフィスタワーX棟40階
+Email　（メールアドレス）
+HP　https://runbird.net/
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</pre>
+  </div>
+  <div class="mail-dlg-foot">
+    <button type="button" class="mail-btn main" id="mailCopy">コピー</button>
+    <button type="button" class="mail-btn" data-close>閉じる</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('mailDlg');
+  var openB = document.getElementById('mailOpen');
+  var copyB = document.getElementById('mailCopy');
+  if (!dlg || !openB) return;
+  function closeDlg() { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+  openB.addEventListener('click', function () {
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+  });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDlg(); });
+  Array.prototype.forEach.call(dlg.querySelectorAll('[data-close]'), function (b) {
+    b.addEventListener('click', closeDlg);
+  });
+  copyB.addEventListener('click', function () {
+    var text = document.getElementById('mailText').textContent;
+    function done() {
+      var o = copyB.textContent; copyB.textContent = 'コピーしました'; copyB.classList.add('done');
+      setTimeout(function () { copyB.textContent = o; copyB.classList.remove('done'); }, 1800);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      dlg.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (err) { alert('コピーできませんでした。文章を選択してコピーしてください。'); }
+      dlg.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+    else fallback();
+  });
+})();
+</script>
 </body>
 </html>
