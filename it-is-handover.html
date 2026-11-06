@@ -205,6 +205,26 @@
     color:#2f4a38;
   }
   .policy-note b{color:#2f6b45;}
+
+  /* ---- アポ紙の送り方（IT→IS） ---- */
+  .ho-box{border:1px solid var(--line);border-radius:10px;background:#f7f9fd;padding:14px 16px;margin-bottom:22px;}
+  .ho-lead{font-size:13px;font-weight:800;color:#6b7690;margin-bottom:10px;}
+  .ho-steps{display:flex;align-items:stretch;gap:10px;}
+  .ho-step{
+    flex:1 1 0;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+    border-left:5px solid var(--blue);border-radius:8px;padding:12px 14px;font-size:15.5px;font-weight:800;color:var(--navy);
+  }
+  .ho-step .n{
+    flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;
+    font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  }
+  .ho-arrow{flex:0 0 auto;align-self:center;font-size:20px;font-weight:800;color:#6b7690;}
+  .ho-arrow::before{content:"→";}
+  @media (max-width:640px){
+    .ho-steps{flex-direction:column;}
+    .ho-arrow{align-self:center;}
+    .ho-arrow::before{content:"↓";}
+  }
 </style>
 <link rel="stylesheet" href="common.css">
 <script src="common.js" defer></script>
@@ -238,6 +258,17 @@
     <div class="policy-note">
       <b>このページの位置づけ</b><br>
       ガチガチの規律ではなく、「条例」レベルの目安です。大前提として、報告漏れなどは一人で抱えず、みんなで管理します。
+    </div>
+
+    <p class="lvl1">■ アポ紙の送り方</p>
+
+    <div class="ho-box">
+      <div class="ho-lead">IT事業部 → IS事業部 の時</div>
+      <div class="ho-steps">
+        <div class="ho-step"><span class="n">1</span><div>アポ紙は<b>手書き</b>で書く</div></div>
+        <div class="ho-arrow"></div>
+        <div class="ho-step"><span class="n">2</span><div><b>空いている人</b>が、行動予定に送信する</div></div>
+      </div>
     </div>
 
     <p class="lvl1">■ 商談引継ぎフロー</p>
