@@ -38,8 +38,14 @@ details.row.o{padding:0;border-bottom:0;margin-bottom:8px}
 details.o>summary{cursor:pointer;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px 14px;color:var(--ac);font-weight:600}
 details.o[open]>summary{border-bottom-left-radius:0;border-bottom-right-radius:0}
 details.o>.tx{border-top:0;border-top-left-radius:0;border-top-right-radius:0;padding-top:2px}
+
+.vsel{max-width:820px;margin:0 auto}.vsel .bx{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+.vsel label{display:block;font-size:13px;color:var(--mu);margin:8px 0 4px}.vsel select,.vsel input{width:100%;padding:8px;font-size:15px;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:6px}
+.vsel .chips{display:flex;flex-wrap:wrap;gap:6px}.vsel .chip{border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}.vsel .chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.vsel .vr{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin-bottom:8px}.vsel .vr .m{font-size:12px;color:var(--mu)}.vsel .vr .why{font-size:12px;color:var(--ac);margin:2px 0}
+.vsel a.go{display:inline-block;margin-top:4px;padding:6px 14px;background:var(--ac);color:#fff;border-radius:6px;text-decoration:none;font-size:14px}
 </style></head><body>
-<header id="hd"><div class="r1"><h1>営業トーク×スライド</h1><select id="pr" aria-label="商材"><option value="ad">Buzz＋（AI動画広告）</option><option value="biz">bizクラウド</option><option value="yt">YouTube動画プロモーション（RBブック）</option><option value="meo">meoクラウド（MEO）</option></select><span><button id="t1" class="tb">スライド×トーク</button> <button id="t2" class="tb">困ったとき</button></span>
+<header id="hd"><div class="r1"><h1>営業トーク×スライド</h1><select id="pr" aria-label="商材"><option value="ad">Buzz＋（AI動画広告）</option><option value="biz">bizクラウド</option><option value="yt">YouTube動画プロモーション（RBブック）</option><option value="meo">meoクラウド（MEO）</option></select><span><button id="t1" class="tb">スライド×トーク</button> <button id="t2" class="tb">困ったとき</button> <button id="t3" class="tb">見せる動画</button></span>
 <select id="ver" aria-label="バージョン"></select> <button id="fv">初版に切替</button> <button id="hs">変更履歴</button>
 <label><input type="checkbox" id="cn" checked> コーチ用メモ</label><label><input type="checkbox" id="cs" checked> スライド</label>
 <span><button id="fm">A−</button> <button id="fp">A＋</button> <button id="hh">ヘッダーを隠す▲</button></span></div>
@@ -98,4 +104,77 @@ function outHtml(cm,o,ch){
  h+=o.length?o.map(x=>`<details class="row o" id="${x.id}"><summary>${x.title}</summary><div class="tx">${bd(x)}</div></details>`).join(''):'<p style="text-align:center;color:var(--mu)">この商材のアウト返し集はまだありません</p>';
  return h+'<p id="qn" hidden style="text-align:center;color:var(--mu)">見つかりませんでした</p>'}
 document.addEventListener('input',e=>{if(e.target.id!='q')return;const k=e.target.value.trim().toLowerCase();let n=0;document.querySelectorAll('#m .row.o').forEach(el=>{const hit=!k||el.textContent.toLowerCase().includes(k);el.hidden=!hit;if(el.tagName=='DETAILS')el.open=!!k&&hit;if(hit)n++});const q=$('#qn');if(q)q.hidden=!k||n>0});
+</script>
+<script>
+(function(){
+var D=[
+["飲食","ストーリー性がある系","株式会社Ulu","カフェバー","https://youtu.be/vQWks1fRoMA","東京都新宿区",["ストーリー","おしゃれ"]],
+["飲食","冒頭ファンタジー系","Taberna.-MOMOMO-","洋食創作料理","https://youtu.be/8_sBRxVOdjA","静岡県静岡市",["ストーリー","面白"]],
+["飲食","オリジナルソングダンス系","レトルト工房　ぐ～！","レトルト食品","https://youtu.be/3upt2kyhVvU","宮城県多賀城市",["歌・ダンス","ポップ","面白","物販"]],
+["飲食","S・目を引く系","警固ドッグ from Bar Orange","ホットドッグ屋","https://youtu.be/DIbtQush2zc","福岡県福岡市",["面白","インパクト"]],
+["飲食","おしゃれ・かっこいい","paspa!","パスタ屋","https://youtu.be/wTqvis4xxfE","沖縄県那覇市",["おしゃれ","かっこいい"]],
+["飲食","YTチャンネル系・盛り上がってる系","BAR NOMO-HIGH","バー","https://youtu.be/_jjXGrCd8gs","沖縄県石垣市",["面白","盛り上がり"]],
+["飲食","音で美味しさを表現系","sweet Danish","パン・カフェ","https://youtu.be/v0T0hIMhM_I","群馬県伊勢崎市",["おしゃれ","女性向け"]],
+["飲食","上品・ブランディング系","我龍","高級料理","https://youtu.be/Q52KbFWoNTY","島根県出雲市",["高級","ブランディング","落ち着き"]],
+["美容室・理容室","カッコいい系","HAIR STUDIO BRIGHT","美容室","https://www.youtube.com/watch?v=KezYNB1EPPM","沖縄県うるま市",["かっこいい"]],
+["美容室・理容室","ポップなナレ・ママさん狙い","Hair Salon Sugar mint","美容院","https://youtu.be/zEobwvo_NmI","千葉県船橋市",["ポップ","ナレ","女性向け","ママ向け"]],
+["美容室・理容室","ナレ","ビートレーディング株式会社","美容室","https://youtu.be/7xt08mlUbnA","宮城県仙台市",["ナレ"]],
+["美容室・理容室","ブランディング＋店舗の売り","ROOM","ヘアーサロン","https://youtu.be/OFX__AGu9rE","神奈川県大和市",["ブランディング","おしゃれ","店の強み"]],
+["美容サロン","S・面白系","セルフ脱毛サロン","脱毛サロン","https://youtu.be/7LzYJKAHc8c","福岡県春日市",["面白","女性向け","インパクト"]],
+["美容サロン","ナレ・店外ロケ","BLISS","エステ","https://youtu.be/cYJAnyHvTGQ","静岡県静岡市",["ナレ","店外ロケ","女性向け"]],
+["美容サロン","ブランディング系・店外ロケ","ネイルサロンシェリー","ネイル","https://youtu.be/DBj_Ost--X0","埼玉県東松山市",["ブランディング","店外ロケ","女性向け","おしゃれ"]],
+["美容サロン","来店型","ROUGE","マツエク","https://youtu.be/kC_KNiXAENM","愛知県名古屋市",["来店型","女性向け","体験イメージ"]],
+["健康業","落ち着きナレ","いやしの空間　あ蔵","整体","https://youtu.be/jOtcBUUmZWo","埼玉県川越市",["ナレ","落ち着き","体験イメージ"]],
+["健康業","冒頭ミステリアス系","アーク鍼灸治療院","整体","https://youtu.be/zg6lvcF_8lg","埼玉県吉川市",["ストーリー","インパクト"]],
+["健康業","(祝)高城相成デビュー作品","あなたのかかりつけ整体","整体","https://youtu.be/1xrLoy2IJlk","埼玉県川口市",["体験イメージ","地域"]],
+["健康業","ライトお客様素材提供・オモロ","Vital EASE","トレーニングジム","https://youtu.be/eZiLKoQJZB0","埼玉県所沢市",["素材提供","面白","ポップ"]],
+["車関係","テーマソング系","3.Auto","車屋・修理・整備","https://youtu.be/dwG26j9-lts","東京都昭島市",["歌・ダンス","ポップ"]],
+["車関係","カッコいい系","Garage Stray Cat","自動車整備業","https://youtu.be/80hwUXDSGJk","千葉県四街道市",["かっこいい"]],
+["車関係","代表インタビュー・TVCM系","株式会社AutoLoop","中古車販売","https://youtu.be/TfkL3J6s4u0","沖縄県沖縄市",["代表出演","TVCM風"]],
+["車関係","S・実写アニメーション","新夏ガレージ","バイク輸送","https://youtu.be/GaYPSmAAHco","佐賀県三養基郡",["アニメ・キャラ","面白","インパクト"]],
+["車関係","かっこいい系・施工風景","CAR SALON Chateau","カーコーティング","https://youtu.be/rahUkb3UgCo","沖縄県島尻郡八重瀬町",["かっこいい","施工・作業風景"]],
+["アクティビティ系","面白・ユニーク系","サイコロ堂","ボードゲーム","https://youtu.be/1s7Vdfu0Xlo","沖縄県那覇市",["面白","体験イメージ"]],
+["アクティビティ系","キャラナレ＋実写系","INTALES Cafe","ボードゲーム","https://youtu.be/zUpquWHFpw0","福岡県福岡市",["アニメ・キャラ","ナレ","体験イメージ"]],
+["アクティビティ系","ポップ系・プロモ系","空飛ぶいちご東京","いちご農園","https://youtu.be/pE7RMN-TCpQ","東京都府中市",["ポップ","体験イメージ","女性向け"]],
+["アクティビティ系","代表ナレ・お客様素材提供＆撮影","株式会社ビッグフィッシュ","ダイビング","https://youtu.be/47OtVrAsRu4","神奈川県横浜市",["代表出演","素材提供","ナレ","体験イメージ"]],
+["アクティビティ系","海上撮影・ドローン","クリエイティブオーシャン","マリン","https://youtu.be/fk3Y60y4hCU","沖縄県沖縄市",["店外ロケ","かっこいい","体験イメージ"]],
+["スクール","レッスン風景見せる系","Blix Dance School","ダンススクール","https://youtu.be/HROfj30GBHY","茨城県ひたちなか市",["施工・作業風景","体験イメージ","歌・ダンス"]],
+["その他","おしゃれ・ブランディング系","株式会社 W FIVE","エクステリア","https://www.youtube.com/watch?v=LgcnAwIKWZI","広島県広島市",["おしゃれ","ブランディング"]],
+["その他","ナレ・広告系","ゴルっちゃ","シュミレーションゴルフ","https://youtu.be/RT6B8T-KYD0","埼玉県深谷市",["ナレ","来店型"]],
+["その他","MV系","古着屋　The moon","古着屋","https://youtu.be/YjYzX57uBF4","岡山県倉敷市",["歌・ダンス","おしゃれ","物販"]],
+["その他","求人・代表インタビュー","株式会社onelife","求人　福祉","https://youtu.be/J8vWA8BA1YE","北海道札幌市",["代表出演","求人"]],
+["その他","キャラ・カワイイナレ系","EMIKKUMASHOP合同会社","物販","https://youtu.be/DFULXlEcTWY","北海道札幌市南区",["アニメ・キャラ","ナレ","物販","女性向け"]],
+["その他","代表インタビュー・PS・店外ロケ","heart rainbow","カウンセリング","https://youtu.be/VZ-Tqkv0AZg","東京都中央区",["代表出演","店外ロケ","落ち着き"]],
+["その他","ナレ","株式会社BUDDYS","トータルペットサロン","https://youtu.be/yXFiXq0Bsa0","東京都世田谷区",["ナレ","女性向け"]]
+];
+var TAGS=["おしゃれ","かっこいい","面白","ポップ","ナレ","代表出演","素材提供","店外ロケ","ストーリー","ブランディング","来店型","体験イメージ","女性向け","高級","落ち着き","歌・ダンス","施工・作業風景","アニメ・キャラ","物販","求人"];
+var cats=["指定なし"].concat(D.map(function(d){return d[0]}).filter(function(v,i,a){return a.indexOf(v)===i}));
+var st={c:"指定なし",q:"",on:{}};
+function vesc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function vrun(){
+ var out=document.getElementById("vres");if(!out)return;
+ var ts=TAGS.filter(function(t){return st.on[t]}),q=st.q.trim(),res=[];
+ if(st.c==="指定なし"&&!q&&!ts.length){out.innerHTML='<p style="color:var(--mu);text-align:center">条件を選ぶと、見せる動画の候補が出ます</p>';return}
+ D.forEach(function(d){var sc=0,why=[];
+  if(st.c!=="指定なし"&&d[0]===st.c){sc+=5;why.push("同じ業種カテゴリ")}
+  if(q){var hay=d[1]+d[2]+d[3]+d[6].join("");q.split(/[\s\u3000,、]+/).forEach(function(w){if(w&&hay.indexOf(w)>=0){sc+=4;why.push("「"+w+"」に一致")}})}
+  ts.forEach(function(t){if(d[6].indexOf(t)>=0||d[1].indexOf(t)>=0){sc+=3;why.push(t)}});
+  if(sc>0)res.push({d:d,sc:sc,why:why})});
+ res.sort(function(a,b){return b.sc-a.sc});
+ if(!res.length){out.innerHTML='<p style="color:var(--mu);text-align:center">合う動画が見つかりません。条件を減らしてください</p>';return}
+ out.innerHTML=res.slice(0,5).map(function(r,i){var d=r.d;return '<div class="vr"><b>'+(i+1)+". "+vesc(d[2])+'</b> <span class="m">'+vesc(d[3])+"／"+vesc(d[5])+'</span><div class="m">'+vesc(d[1])+'</div><div class="why">理由：'+vesc(r.why.join("・"))+'</div><a class="go" href="'+vesc(d[4])+'" target="_blank" rel="noopener">動画を開く</a></div>'}).join("")}
+function vrender(){
+ var m=document.getElementById("m");
+ document.getElementById("toc").innerHTML="";
+ ["t1","t2"].forEach(function(i){document.getElementById(i).classList.remove("on")});document.getElementById("t3").classList.add("on");
+ m.innerHTML='<div class="vsel"><div class="bx"><label>業種カテゴリ</label><select id="vc">'+cats.map(function(c){return "<option"+(c===st.c?" selected":"")+">"+vesc(c)+"</option>"}).join("")+'</select><label>業種・キーワード（例：整体、ネイル、物販）</label><input id="vq" value="'+vesc(st.q)+'" placeholder="自由入力"><label>お客様の特徴・見せたい雰囲気（複数選択可）</label><div class="chips" id="vch"></div></div><div id="vres"></div></div>';
+ var ch=document.getElementById("vch");
+ TAGS.forEach(function(t){var b=document.createElement("button");b.type="button";b.className="chip"+(st.on[t]?" on":"");b.textContent=t;b.onclick=function(){st.on[t]=!st.on[t];b.classList.toggle("on",!!st.on[t]);vrun()};ch.appendChild(b)});
+ document.getElementById("vc").onchange=function(e){st.c=e.target.value;vrun()};
+ document.getElementById("vq").oninput=function(e){st.q=e.target.value;vrun()};
+ vrun();fit();scrollTo(0,0)}
+var _r=render;
+render=function(id){_r(id);var t3=document.getElementById("t3");if(tab==="v")vrender();else if(t3)t3.classList.remove("on")};
+document.getElementById("t3").onclick=function(){tab="v";render(cur)};
+})();
 </script></body></html>
