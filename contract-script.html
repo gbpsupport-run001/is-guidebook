@@ -52,6 +52,40 @@
   }
   .policy-note b{color:#2f6b45;}
 
+  /* ---- 全体の流れ ---- */
+  .flow-overview{
+    border:1.5px solid var(--navy);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:24px;
+    background:#fbfcfe;
+  }
+  .flow-overview .fo-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .flow-steps{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;}
+  .fstep{
+    background:#eef2f9;border:1px solid var(--line);border-radius:6px;
+    padding:7px 12px;font-weight:800;font-size:14px;color:var(--navy);line-height:1.5;
+  }
+  .fstep small{display:block;font-size:11px;color:#6b7690;font-weight:700;}
+  .farrow{align-self:center;color:#9aa5b8;font-weight:800;}
+  .flow-overview .fo-note{font-size:12.5px;color:#6b7690;font-weight:700;margin-top:10px;}
+
+  .only-badge{
+    display:inline-block;background:#fff;color:var(--green);
+    font-size:11.5px;font-weight:800;padding:2px 9px;border-radius:999px;white-space:nowrap;
+  }
+  .b4 .only-badge{color:var(--teal);}
+
+  /* ---- 規約リンク ---- */
+  .terms{list-style:none;margin:10px 0 0;padding:0;}
+  .terms li{
+    padding:9px 0;border-top:1px dashed var(--line);
+    font-size:14.5px;font-weight:700;
+  }
+  .terms li:first-child{border-top:none;}
+  .terms a{color:var(--blue);font-weight:800;word-break:break-all;}
+  .terms .tname{display:inline-block;min-width:110px;font-weight:800;color:var(--navy);}
+
   .lvl1{
     font-size:15px;font-weight:700;color:var(--navy);
     margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--navy);
@@ -259,16 +293,48 @@
   <div class="header">
     <div class="eyebrow">RUNBIRD IS事業部　商談スクリプト</div>
     <h1>ゲット後の商談時の流れ</h1>
-    <div class="sub">署名の前に口頭で伝えること／電子契約・オーナー権限・ロボペイの案内</div>
+    <div class="sub">LINEお友達追加→申込書作成→規約をLINEに送る→署名前にチェック事項2点→署名→ロボペイ</div>
   </div>
 
   <div class="body">
 
     <div class="must"><span class="star">★</span>画面共有は切る</div>
 
-    <!-- ① 口頭で伝える2点 -->
+    <!-- 全体の流れ -->
+    <div class="flow-overview">
+      <div class="fo-title">全体の流れ（大枠）</div>
+      <div class="flow-steps">
+        <span class="fstep">1　LINEお友達追加</span><span class="farrow">→</span>
+        <span class="fstep">2　申込書作成</span><span class="farrow">→</span>
+        <span class="fstep">3　規約をLINEに送る<small>IS事業部が使う規約URLだけ（下の「1」参照）</small></span><span class="farrow">→</span>
+        <span class="fstep">4　署名前にチェック事項2点を伝える</span><span class="farrow">→</span>
+        <span class="fstep">5　署名</span><span class="farrow">→</span>
+        <span class="fstep">6　ロボペイ<small>カード登録メールは顧客管理システムで対応</small></span>
+      </div>
+      <div class="fo-note">※ Googleビジネスプロフィールの管理者権限（オーナー権限）は、MEOクラウドのみの作業です（下の「4」参照）。</div>
+    </div>
+
+    <!-- ① LINE追加・申込書作成・規約送信 -->
+    <div class="block b6">
+      <div class="block-head"><span class="no">1</span>LINEお友達追加・申込書作成・規約をLINEに送る</div>
+      <div class="block-body">
+        <ul class="todo">
+          <li><span class="box"></span><span class="sn">1</span><span class="tx">LINEのお友達追加をしてもらう</span></li>
+          <li><span class="box"></span><span class="sn">2</span><span class="tx">申込書を作成する</span></li>
+          <li><span class="box"></span><span class="sn">3</span><span class="tx">利用規約をLINEに送る<span class="small">下のリンクのうち、契約する商材のものだけを送る</span></span></li>
+        </ul>
+        <div class="lead" style="margin-top:14px;"><span class="tag do">規約URL</span>　IS事業部が使う利用規約（<a href="https://runbird.net/terms/" target="_blank" rel="noopener">各種サービス利用規約</a>から、IS事業部の商材分だけ）</div>
+        <ul class="terms">
+          <li><span class="tname">MEOクラウド</span><a href="https://runbird.net/meo_cloud-terms/" target="_blank" rel="noopener">https://runbird.net/meo_cloud-terms/</a></li>
+          <li><span class="tname">Buzz＋</span><a href="https://runbird.net/buzz-plus/" target="_blank" rel="noopener">https://runbird.net/buzz-plus/</a></li>
+          <li><span class="tname">bizクラウド</span><a href="https://runbird.net/biz_cloud-terms/" target="_blank" rel="noopener">https://runbird.net/biz_cloud-terms/</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ② 口頭で伝える2点 -->
     <div class="block b1">
-      <div class="block-head"><span class="no">1</span>署名の前に、口頭で伝える2点</div>
+      <div class="block-head"><span class="no">2</span>署名の前に、口頭で伝える2点（チェック事項）</div>
       <div class="block-body">
         <div class="lead"><span class="tag say">口頭</span>　はじめのひとこと</div>
         <div class="quote">
@@ -313,9 +379,9 @@
       </div>
     </div>
 
-    <!-- ② 電子契約 -->
+    <!-- ③ 電子契約 -->
     <div class="block b2">
-      <div class="block-head"><span class="no">2</span>電子契約の署名を案内する</div>
+      <div class="block-head"><span class="no">3</span>電子契約の署名を案内する</div>
       <div class="block-body">
         <div class="lead"><span class="tag do">操作の案内</span>　この順番で声をかける</div>
         <ul class="todo">
@@ -332,11 +398,12 @@
       </div>
     </div>
 
-    <!-- ③ オーナー権限 -->
+    <!-- ④ オーナー権限（MEOクラウドのみ） -->
     <div class="block b3">
-      <div class="block-head"><span class="no">3</span>Googleビジネスプロフィールの管理者権限（オーナー権限）</div>
+      <div class="block-head"><span class="no">4</span>Googleビジネスプロフィールの管理者権限（オーナー権限）<span class="only-badge">MEOクラウドのみ</span></div>
       <div class="block-body">
         <div class="lead"><span class="tag do">操作の案内</span>　この順番で声をかける</div>
+        <div class="small" style="margin-bottom:8px;">※ この作業はMEOクラウドのみ。Buzz＋／bizクラウドでは行わない。</div>
         <ul class="todo">
           <li><span class="box"></span><span class="sn">1</span><span class="tx">管理しているメールアドレスに「オーナー権限付与」or「管理リクエスト」の案内来ていますか？</span></li>
           <li><span class="box"></span><span class="sn">2</span><span class="tx">「返信」ボタン押してください</span></li>
@@ -345,10 +412,11 @@
       </div>
     </div>
 
-    <!-- ④ ロボペイ -->
+    <!-- ⑤ ロボペイ -->
     <div class="block b4">
-      <div class="block-head"><span class="no">4</span>ロボペイ：クレジットカード登録の案内</div>
+      <div class="block-head"><span class="no">5</span>ロボペイ：クレジットカード登録の案内</div>
       <div class="block-body">
+        <div class="lead"><span class="tag do">対応方法</span>　カード登録メールは顧客管理システムで対応する</div>
         <div class="mailsub">
           <span class="ml">お客様に届くメールの件名</span>
           【株式会社ランバード】よりクレジットカード情報登録のご案内
@@ -364,9 +432,9 @@
       </div>
     </div>
 
-    <!-- ⑤ 契約書を取り直した場合 -->
+    <!-- ⑥ 契約書を取り直した場合 -->
     <div class="block b5">
-      <div class="block-head"><span class="no">5</span>契約書を取り直した場合</div>
+      <div class="block-head"><span class="no">6</span>契約書を取り直した場合</div>
       <div class="block-body">
         <div class="lead"><span class="tag do">契約書</span>　取り直した契約書に入れる文言</div>
         <div class="quote">
@@ -377,9 +445,9 @@
       </div>
     </div>
 
-    <!-- ⑥ クレジットカード払いと銀行振込に分けたい場合 -->
+    <!-- ⑦ クレジットカード払いと銀行振込に分けたい場合 -->
     <div class="block b6">
-      <div class="block-head"><span class="no">6</span>クレジットカード払いと銀行振込に分けたい場合</div>
+      <div class="block-head"><span class="no">7</span>クレジットカード払いと銀行振込に分けたい場合</div>
       <div class="block-body">
         <div class="lead"><span class="tag do">契約書</span>　備考に追加する文言</div>
         <div class="quote">
