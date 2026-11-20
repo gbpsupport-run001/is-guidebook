@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ISガイドブック｜テレアポトークスクリプト（MEOトーク）</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{
+--navy:#1b2a4a;
+--blue:#2f5da6;
+--green:#4a8a5c;
+--warn:#c0621f;
+--red:#c0392b;
+--brick:#b5483a;
+--teal:#1c7c8a;
+--line:#d8dee8;
+--bg:#f5f7fb;
+}
+*{box-sizing:border-box;}
+body{
+background:var(--bg);
+margin:0;
+padding:32px;
+line-height:1.7;
+}
+.sheet{
+max-width:860px;
+margin:0 auto;
+background:#fff;
+border:1px solid var(--line);
+border-radius:6px;
+overflow:hidden;
+}
+.header{background:var(--navy);color:#fff;padding:20px 32px;}
+.header.eyebrow{font-size:12px;letter-spacing:.08em;opacity:.8;margin-bottom:4px;}
+.header h1{margin:0;font-size:21px;}
+.header.sub{font-size:12px;opacity:.75;margin-top:6px;}
+.body{padding:28px 32px 36px;}
+
+/* ---- ブロック ---- */
+.block{
+border:1px solid var(--line);
+border-radius:8px;
+overflow:hidden;
+margin-bottom:26px;
+background:#fff;
+}
+.block-head{
+display:flex;align-items:center;gap:10px;
+color:#fff;
+font-weight:800;
+font-size:16px;
+padding:11px 16px;
+}
+.block-head.no{
+width:26px;height:26px;border-radius:50%;
+background:#fff;
+font-size:14px;
+display:flex;align-items:center;justify-content:center;
+flex:0 0 26px;
+}
+.b1.block-head{background:var(--warn);}.b1.block-head.no{color:var(--warn);}
+.b2.block-head{background:var(--blue);}.b2.block-head.no{color:var(--blue);}
+.b3.block-head{background:var(--green);}.b3.block-head.no{color:var(--green);}
+.b4.block-head{background:var(--teal);}.b4.block-head.no{color:var(--teal);}
+.b5.block-head{background:var(--brick);}.b5.block-head.no{color:var(--brick);}
+.block-body{padding:16px 18px 18px;}
+
+.tag{
+display:inline-block;
+font-size:11.5px;font-weight:800;color:#fff;
+padding:2px 9px;border-radius:999px;
+white-space:nowrap;
+}
+.tag.say{background:var(--warn);}
+.tag.do{background:var(--blue);}
+
+.lead{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+
+/* ---- セリフ ---- */
+.quote{
+border-left:4px solid var(--warn);
+background:#fdf7f2;
+padding:12px 16px;
+font-size:14.5px;
+line-height:1.9;
+border-radius:0 6px 6px 0;
+margin-top:8px;
+}
+.quote.q-label{display:block;font-size:11.5px;font-weight:800;color:#8a6a4a;margin-bottom:2px;}
+.quote.blue{border-left-color:var(--blue);background:#f5f8fd;}
+.quote.blue.q-label{color:#4a6a9a;}
+
+.reply{
+margin-top:10px;
+font-size:14.5px;font-weight:700;color:#4a5670;
+}
+.reply.r-label{
+display:inline-block;background:#eef2f9;color:var(--navy);
+font-size:11.5px;font-weight:800;padding:1px 8px;border-radius:999px;margin-right:8px;
+}
+
+.qa{
+margin-top:14px;
+border:1px solid #e7c79c;
+background:#fff9f1;
+border-radius:8px;
+padding:12px 14px;
+}
+.qa.q{
+display:flex;align-items:flex-start;gap:8px;
+font-size:14.5px;font-weight:800;color:var(--warn);
+}
+.qa.q.tagq{
+flex:0 0 auto;
+background:var(--warn);color:#fff;font-size:11.5px;
+padding:1px 8px;border-radius:999px;margin-top:2px;
+}
+.qa.a{margin-top:8px;font-size:14.5px;font-weight:700;}
+
+.footer{
+border-top:1px solid var(--line);
+padding:14px 32px;
+font-size:11px;
+color:#888;
+display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+}
+
+@media screen and (max-width:760px){
+body{padding:12px;}
+.body{padding:20px 14px 26px;}
+.header{padding:18px 16px;}
+.block-body{padding:14px 14px 16px;}
+}
+</style>
+<link rel="stylesheet" href="common.css">
+<script src="common.js" defer></script>
+</head>
+<body>
+<nav class="topbar">
+<a href="./" class="home"><span class="ic">🏠</span><span class="l">ホーム</span><span class="s">ホーム</span></a>
+<span class="sep"></span>
+<a href="rules.html"><span class="ic">📜</span><span class="l">全般ルール</span><span class="s">ルール</span></a>
+<a href="report-guide.html"><span class="ic">📝</span><span class="l">資料の作成</span><span class="s">資料作成</span></a>
+<span class="sep"></span>
+<a href="teleapo-script.html" class="active"><span class="ic">📱</span><span class="l">テレアポ</span><span class="s">テレアポ</span></a>
+<a href="appo-followup.html"><span class="ic">📞</span><span class="l">アポ取得後</span><span class="s">アポ後</span></a>
+<a href="it-is-handover.html"><span class="ic">🔀</span><span class="l">IT→IS引継ぎ</span><span class="s">IT→IS</span></a>
+<a href="handover.html"><span class="ic">🤝</span><span class="l">商談の引継ぎ</span><span class="s">商談</span></a>
+<span class="sep"></span>
+<a href="contract-script.html"><span class="ic">🗣️</span><span class="l">ゲット後</span><span class="s">ゲット後</span></a>
+<a href="docusign-flow.html"><span class="ic">✍️</span><span class="l">電子契約</span><span class="s">電子契約</span></a>
+<a href="workflow.html"><span class="ic">📋</span><span class="l">受注後</span><span class="s">受注後</span></a>
+<span class="sep"></span>
+<a href="https://gbpsupport-run001.github.io/runbird-inside-sales-report/for-menber/2026-10/" target="_blank" rel="noopener"><span class="ic">📊</span><span class="l">月次資料</span><span class="s">月次</span></a>
+</nav>
+<div class="sheet">
+<div class="header">
+<div class="eyebrow">RUNBIRD IS事業部　テレアポトークスクリプト</div>
+<h1>テレアポトークスクリプト（MEOトーク）</h1>
+<div class="sub">つかみ → 現状確認 → ワクワクさせる → アポ打診 → 日程確定・名前とメールアドレスを聞く</div>
+</div>
+
+<div class="body">
+
+<!-- ① つかみ -->
+<div class="block b1">
+<div class="block-head"><span class="no">1</span>つかみ（30秒だけお電話よろしいでしょうか）</div>
+<div class="block-body">
+<div class="quote">
+<span class="q-label">セリフ</span>
+もしもし、突然のお電話失礼いたします。<br>
+グーグルマップに表示される店舗情報の確認でお話したGBP（Google ビジネスプロフィール）サポートチームのと申しますが、今30秒だけお電話よろしいでしょうか。
+</div>
+<div class="reply"><span class="r-label">相手がOKしたら</span>ありがとうございます。</div>
+</div>
+</div>
+
+<!-- ② きっかけ・現状確認 -->
+<div class="block b2">
+<div class="block-head"><span class="no">2</span>きっかけと現状確認</div>
+<div class="block-body">
+<div class="quote blue">
+<span class="q-label">セリフ</span>
+実は今、〇〇市（地域）のエリアでのお店さんを探している方がかなり増えてまして、その流れでGoogleマップを見ていたら、〇〇さんのお店の情報がすぐにみつけられなかったのでご連絡さしあげたんですけれども、意図的に情報が見つかりづらいようにしているわけではなかったですかね。
+</div>
+<div class="quote blue">
+<span class="q-label">セリフ</span>
+そうですよね。お店さんとしても今より新規のお問い合わせやご来店が増える分には、まだご対応は可能ですか？
+</div>
+</div>
+</div>
+
+<!-- ③ ワクワクさせる -->
+<div class="block b3">
+<div class="block-head"><span class="no">3</span>ワクワクさせる（A）</div>
+<div class="block-body">
+<div class="quote">
+<span class="q-label">セリフ</span>
+本部への加盟料払うのが嫌だっていう店舗さんが多くて、それを無くせるような企画なんですね。
+</div>
+<div class="qa">
+<div class="q"><span class="tagq">聞かれたら</span>どういう事？</div>
+<div class="a">
+<div class="quote" style="background:#fff;">
+<span class="q-label">セリフ</span>
+弊社が半年以上お掃除本舗のオーナー様とお仕事させていただいてる中で、こちらからのご集客がかなり増えて、加盟料払わずに自社で集客できる分には喜んでもらえますか？
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ④ アポ打診 -->
+<div class="block b4">
+<div class="block-head"><span class="no">4</span>アポ打診（A）</div>
+<div class="block-body">
+<div class="quote">
+<span class="q-label">セリフ</span>
+一度、「どこを直せばどのくらい反響が出そうかだけ」実際の画面を見ていただきながらお伝えさせていただければと思うのですが、だいたい皆さんZOOMで10分～20分ほどのお時間なんですが、普段午前中と午後でしたらどちらの方がご都合よろしいでしょうか？
+</div>
+<div class="reply"><span class="r-label">相手の返答例</span>午後ですね。</div>
+<div class="quote">
+<span class="q-label">セリフ</span>
+そうしましたら明日の〇時と〇時と〇時が空いているんですが、どの時間帯が一番いいですか？
+</div>
+</div>
+</div>
+
+<!-- ⑤ 日程確定・名前とメールアドレス -->
+<div class="block b5">
+<div class="block-head"><span class="no">5</span>日程確定・名前とメールアドレスを聞く</div>
+<div class="block-body">
+<div class="quote">
+<span class="q-label">セリフ</span>
+そうしましたら明日の〇時からZOOMでお打ち合わせをさせていただければと思いますので、改めまして私がGBPサポートチームの〇〇と申しますが、失礼がないように担当者様のお名前をお名字だけお伺いしてもよろしいでしょうか。
+</div>
+<div class="quote">
+<span class="q-label">セリフ</span>
+〇〇様ですね、それでは〇〇様宛に当日使用するZoomのURLをメールでお送りしますので、普段ご覧になるメールアドレス1つ教えていただけますか？
+</div>
+<div class="quote">
+<span class="q-label">締めのセリフ</span>
+ありがとうございます。<br>
+それでは、〇〇様、明日の〇時からよろしくお願いいたします
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<span>株式会社ランバード　IS事業部</span>
+<span>テレアポトークスクリプト（MEOトーク）</span>
+</div>
+</div>
+</body>
+</html>
