@@ -32,6 +32,11 @@ body.nn .n,body.nn p.no{display:none}
 #kpl{display:flex;flex-direction:column;gap:2px;margin-top:4px;max-height:38vh;overflow:auto}
 #kpl a{font-size:12px;line-height:1.45;color:var(--tx);text-decoration:none}
 #kpl a:hover{color:var(--ac)}
+#kpl a.kpin{display:block;background:var(--ac);color:#fff;border-radius:8px;padding:8px 10px;margin-bottom:5px;line-height:1.5}
+#kpl a.kpin:hover{color:#fff;opacity:.92}
+#kpl a.kpin .kpin-h{display:block;font-weight:700;font-size:13px}
+#kpl a.kpin .kpin-b{display:block;font-size:12px;margin-top:2px}
+#kpl a.kpin .kpin-f{display:block;font-size:12px;font-weight:700;margin-top:2px}
 #kb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 6px);left:8px;z-index:11;box-shadow:0 1px 4px rgba(0,0,0,.25)}
 #kb[hidden]{display:none}
 #hp{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.45);display:flex;justify-content:flex-end}#hp[hidden]{display:none}
@@ -108,7 +113,7 @@ function outHtml(cm,o,ch){
  return h+'<p id="qn" hidden style="text-align:center;color:var(--mu)">見つかりませんでした</p>'}
 document.addEventListener('input',e=>{if(e.target.id!='q')return;const k=e.target.value.trim().toLowerCase();let n=0;document.querySelectorAll('#m .row.o').forEach(el=>{const hit=!k||el.textContent.toLowerCase().includes(k);el.hidden=!hit;if(el.tagName=='DETAILS')el.open=!!k&&hit;if(hit)n++});const q=$('#qn');if(q)q.hidden=!k||n>0});
 function kpUpd(cm,o){const k=$('#kp'),b=$('#kb');if(tab!='m'){k.hidden=true;b.hidden=true;return}
- $('#kpl').innerHTML=[...cm,...o].map(x=>`<a href="#" data-k="${x.id}">${x.title}</a>`).join('')||'<span style="font-size:12px;color:var(--mu)">まだありません</span>';
+ $('#kpl').innerHTML=(()=>{const pin=cm.find(x=>x.id=='c04');const rest=[...cm.filter(x=>x.id!='c04'),...o];const s=(pin?`<a href="#" data-k="c04" class="kpin"><span class="kpin-h">📌 ピン止め｜まずは肯定して受ける</span><span class="kpin-b">客じゃないのは、この3つだけ<br>①全く話を聞く気がない<br>②お客様を増やす気がない<br>③非決（決裁者ではない）</span><span class="kpin-f">→ それ以外は全部「客」</span></a>`:'')+rest.map(x=>`<a href="#" data-k="${x.id}">${x.title}</a>`).join('');return s||'<span style="font-size:12px;color:var(--mu)">まだありません</span>'})();
  k.hidden=!kpOpen;b.hidden=kpOpen}
 $('#kx').onclick=()=>{kpOpen=false;$('#kp').hidden=true;$('#kb').hidden=false};
 $('#kb').onclick=()=>{kpOpen=true;$('#kp').hidden=false;$('#kb').hidden=true};
